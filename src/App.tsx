@@ -1,4 +1,5 @@
 import { FaTelegramPlane, FaInstagram } from "react-icons/fa";
+import { Analytics } from "@vercel/analytics/react";
 
 const fullscreenImg = "/FullScreen_1782240749824.png";
 
@@ -151,6 +152,7 @@ export default function App() {
         </div>
 
       </div>
+      <Analytics />
     </main>
   );
 }
