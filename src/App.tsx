@@ -1,3 +1,5 @@
+import { FaTelegramPlane, FaInstagram } from "react-icons/fa";
+
 const fullscreenImg = "/FullScreen_1782240749824.png";
 
 const TELEGRAM_URL = "https://t.me/desiresride";
@@ -14,7 +16,8 @@ const ONLYFANS_COLOR = "#00AFF0";
 
 interface CtaButtonProps {
   href: string;
-  label: React.ReactNode;
+  label: string;
+  icon?: React.ReactNode;
   background: string;
   delay: string;
   ariaLabel: string;
@@ -24,6 +27,7 @@ interface CtaButtonProps {
 function CtaButton({
   href,
   label,
+  icon,
   background,
   delay,
   ariaLabel,
@@ -54,7 +58,7 @@ function CtaButton({
         rel="noopener noreferrer"
         aria-label={ariaLabel}
         className="
-          flex items-center justify-center
+          flex items-center justify-center gap-2
           rounded-full font-semibold text-white
           text-xs tracking-wide select-none
           transition-all duration-300
@@ -69,6 +73,7 @@ function CtaButton({
           height: "38px",
         }}
       >
+        {icon}
         {label}
       </a>
     </div>
@@ -95,7 +100,7 @@ export default function App() {
       {/* content */}
       <div className="relative z-10 flex flex-col flex-1 justify-end px-5 pb-8 text-center">
 
-        {/* TEXT */}
+        {/* TITLE */}
         <div className="mb-6 sm:mb-8">
           <h1
             className="text-4xl sm:text-5xl font-bold"
@@ -128,7 +133,8 @@ export default function App() {
             background={TELEGRAM_COLOR}
             arrowColor={TELEGRAM_COLOR}
             delay="delay-300"
-            label="✈️ Telegram"
+            icon={<FaTelegramPlane size={16} />}
+            label="Telegram"
           />
 
           <CtaButton
@@ -137,7 +143,8 @@ export default function App() {
             background={INSTAGRAM_GRADIENT}
             arrowColor="#F77737"
             delay="delay-400"
-            label="📷 Instagram"
+            icon={<FaInstagram size={16} />}
+            label="Instagram"
           />
 
           <CtaButton
