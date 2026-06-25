@@ -1,5 +1,3 @@
-import { FaTelegramPlane, FaInstagram } from "react-icons/fa";
-
 const fullscreenImg = "/FullScreen_1782240749824.png";
 
 const TELEGRAM_URL = "https://t.me/desiresride";
@@ -16,8 +14,7 @@ const ONLYFANS_COLOR = "#00AFF0";
 
 interface CtaButtonProps {
   href: string;
-  label: string;
-  icon?: React.ReactNode;
+  label: React.ReactNode;
   background: string;
   delay: string;
   ariaLabel: string;
@@ -27,7 +24,6 @@ interface CtaButtonProps {
 function CtaButton({
   href,
   label,
-  icon,
   background,
   delay,
   ariaLabel,
@@ -57,7 +53,15 @@ function CtaButton({
         target="_blank"
         rel="noopener noreferrer"
         aria-label={ariaLabel}
-        className="flex items-center justify-center gap-2 rounded-full font-semibold text-white text-xs tracking-wide select-none transition-all"
+        className="
+          flex items-center justify-center
+          rounded-full font-semibold text-white
+          text-xs tracking-wide select-none
+          transition-all duration-300
+          hover:scale-105
+          active:scale-95
+          focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60
+        "
         style={{
           background,
           boxShadow: "0 4px 18px rgba(0,0,0,0.22)",
@@ -65,7 +69,6 @@ function CtaButton({
           height: "38px",
         }}
       >
-        {icon && icon}
         {label}
       </a>
     </div>
@@ -92,7 +95,7 @@ export default function App() {
       {/* content */}
       <div className="relative z-10 flex flex-col flex-1 justify-end px-5 pb-8 text-center">
 
-        {/* TITLE */}
+        {/* TEXT */}
         <div className="mb-6 sm:mb-8">
           <h1
             className="text-4xl sm:text-5xl font-bold"
@@ -125,7 +128,6 @@ export default function App() {
             background={TELEGRAM_COLOR}
             arrowColor={TELEGRAM_COLOR}
             delay="delay-300"
-            icon={<FaTelegramPlane size={16} />}
             label="Telegram"
           />
 
@@ -135,7 +137,6 @@ export default function App() {
             background={INSTAGRAM_GRADIENT}
             arrowColor="#F77737"
             delay="delay-400"
-            icon={<FaInstagram size={16} />}
             label="Instagram"
           />
 
