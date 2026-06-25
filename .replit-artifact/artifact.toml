@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Desires Ride"
+version = "1.0.0"
+id = "artifacts/desires-ride"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24635
+
+[services.development]
+run = "pnpm --filter @workspace/desires-ride run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/desires-ride", "run", "build" ]
+publicDir = "artifacts/desires-ride/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24635"
+BASE_PATH = "/"
