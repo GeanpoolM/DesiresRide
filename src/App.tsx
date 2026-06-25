@@ -137,7 +137,7 @@ export default function App() {
             background={INSTAGRAM_GRADIENT}
             arrowColor="#F77737"
             delay="delay-400"
-            label="📸 Instagram"
+            label="📷 Instagram"
           />
 
           <CtaButton
@@ -146,7 +146,7 @@ export default function App() {
             background={ONLYFANS_COLOR}
             arrowColor={ONLYFANS_COLOR}
             delay="delay-500"
-            label="💙 O.F."
+            label="O.F."
           />
 
         </div>
