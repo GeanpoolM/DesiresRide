@@ -1,4 +1,5 @@
 import { FaTelegramPlane, FaInstagram } from "react-icons/fa";
+import { SiOnlyfans } from "react-icons/si";
 
 const fullscreenImg = "/FullScreen_1782240749824.png";
 
@@ -34,13 +35,7 @@ function CtaButton({
   return (
     <div className={`animate-fade-in-up ${delay} flex flex-col items-center shrink-0`}>
       <svg className="w-4 h-4 sm:w-5 sm:h-5 mb-1 animate-bounce" viewBox="0 0 20 20" fill="none">
-        <path
-          d="M5 7l5 5 5-5"
-          stroke={arrowColor}
-          strokeWidth="2.2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
+        <path d="M5 7l5 5 5-5" stroke={arrowColor} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
 
       <a
@@ -59,8 +54,8 @@ function CtaButton({
         style={{
           background,
           boxShadow: "0 4px 18px rgba(0,0,0,0.22)",
-          width: "clamp(88px, 28vw, 140px)",
-          height: "clamp(32px, 8.5vw, 38px)",
+          width: "clamp(104px, 30vw, 155px)",
+          height: "clamp(34px, 8.5vw, 38px)",
         }}
       >
         {icon}
@@ -81,10 +76,7 @@ export default function App() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div
-        className="absolute inset-0"
-        style={{ backgroundColor: "rgba(0,0,0,0.50)" }}
-      />
+      <div className="absolute inset-0" style={{ backgroundColor: "rgba(0,0,0,0.50)" }} />
 
       <div className="relative z-10 flex flex-col flex-1 justify-end px-3 pb-[max(10px,env(safe-area-inset-bottom))] sm:px-5 sm:pb-8 text-center">
         <div className="mb-3 sm:mb-8">
@@ -112,13 +104,13 @@ export default function App() {
 
         <div className="flex flex-row justify-center items-center w-full gap-1.5 sm:gap-6 max-w-full">
           <CtaButton
-            href={TELEGRAM_URL}
-            ariaLabel="Telegram"
-            background={TELEGRAM_COLOR}
-            arrowColor={TELEGRAM_COLOR}
+            href={ONLYFANS_URL}
+            ariaLabel="Unlock More"
+            background={ONLYFANS_COLOR}
+            arrowColor={ONLYFANS_COLOR}
             delay="delay-300"
-            icon={<FaTelegramPlane size={16} />}
-            label="Telegram"
+            icon={<SiOnlyfans size={17} />}
+            label="Unlock More 🍑"
           />
 
           <CtaButton
@@ -132,12 +124,13 @@ export default function App() {
           />
 
           <CtaButton
-            href={ONLYFANS_URL}
-            ariaLabel="OnlyFans"
-            background={ONLYFANS_COLOR}
-            arrowColor={ONLYFANS_COLOR}
+            href={TELEGRAM_URL}
+            ariaLabel="Telegram"
+            background={TELEGRAM_COLOR}
+            arrowColor={TELEGRAM_COLOR}
             delay="delay-500"
-            label="O.F."
+            icon={<FaTelegramPlane size={16} />}
+            label="Telegram"
           />
         </div>
       </div>
