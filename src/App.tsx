@@ -35,7 +35,7 @@ function CtaButton({
   badge,
 }: CtaButtonProps) {
   return (
-    <div className={`animate-fade-in-up ${delay} relative flex flex-col items-center shrink-0`}>
+    <div className={`animate-fade-in-up ${delay} flex flex-col items-center shrink-0`}>
       <svg className="w-4 h-4 sm:w-5 sm:h-5 mb-1 animate-bounce" viewBox="0 0 20 20" fill="none">
         <path
           d="M5 7l5 5 5-5"
@@ -46,38 +46,13 @@ function CtaButton({
         />
       </svg>
 
-      {badge && (
-  <span
-    className="
-      absolute
-      -top-3
-      right-2
-      px-3
-      py-[3px]
-      rounded-full
-      text-[8px] sm:text-[9px]
-      font-bold
-      uppercase
-      tracking-widest
-      text-white
-      shadow-lg
-      z-20
-    "
-    style={{
-      background: "linear-gradient(90deg,#FF7A3D,#FF5A2E)",
-      boxShadow: "0 6px 16px rgba(255,120,60,.45)",
-    }}
-  >
-    {badge}
-  </span>
-)}
-
       <a
         href={href}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={ariaLabel}
         className="
+          relative overflow-visible
           flex items-center justify-center gap-1.5
           rounded-full font-semibold text-white
           text-[10px] sm:text-xs tracking-wide select-none
@@ -92,6 +67,36 @@ function CtaButton({
           height: "clamp(35px, 8.5vw, 38px)",
         }}
       >
+        {badge && (
+          <span
+            className="
+              absolute
+              -top-3
+              right-2
+              px-3
+              py-[3px]
+              rounded-full
+              text-[8px] sm:text-[9px]
+              font-bold
+              uppercase
+              tracking-widest
+              text-white
+              shadow-lg
+              z-20
+              pointer-events-none
+              whitespace-nowrap
+              transition-transform duration-300
+              group-hover:scale-105
+            "
+            style={{
+              background: "linear-gradient(90deg,#FF7A3D,#FF5A2E)",
+              boxShadow: "0 6px 16px rgba(255,120,60,.45)",
+            }}
+          >
+            {badge}
+          </span>
+        )}
+
         {icon}
         {label}
       </a>
