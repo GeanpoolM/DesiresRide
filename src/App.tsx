@@ -47,29 +47,30 @@ function CtaButton({
       </svg>
 
       {badge && (
-        <span
-          className="
-            absolute
-            top-5
-            right-0
-            px-3
-            py-[3px]
-            rounded-full
-            text-[8px] sm:text-[9px]
-            font-bold
-            uppercase
-            tracking-widest
-            text-white
-            shadow-lg
-            z-20
-          "
-          style={{
-            background: "linear-gradient(90deg,#FF7A3D,#FF5A2E)",
-          }}
-        >
-          {badge}
-        </span>
-      )}
+  <span
+    className="
+      absolute
+      -top-3
+      right-2
+      px-3
+      py-[3px]
+      rounded-full
+      text-[8px] sm:text-[9px]
+      font-bold
+      uppercase
+      tracking-widest
+      text-white
+      shadow-lg
+      z-20
+    "
+    style={{
+      background: "linear-gradient(90deg,#FF7A3D,#FF5A2E)",
+      boxShadow: "0 6px 16px rgba(255,120,60,.45)",
+    }}
+  >
+    {badge}
+  </span>
+)}
 
       <a
         href={href}
