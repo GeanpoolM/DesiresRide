@@ -59,8 +59,8 @@ function CtaButton({
         style={{
           background,
           boxShadow: "0 4px 18px rgba(0,0,0,0.22)",
-          width: "clamp(92px, 28vw, 140px)",
-          height: "clamp(34px, 9vw, 38px)",
+          width: "clamp(88px, 28vw, 140px)",
+          height: "clamp(32px, 8.5vw, 38px)",
         }}
       >
         {icon}
@@ -73,7 +73,7 @@ function CtaButton({
 export default function App() {
   return (
     <main
-      className="relative w-full min-h-screen flex flex-col overflow-hidden"
+      className="relative w-full h-[100dvh] min-h-[100dvh] flex flex-col overflow-hidden"
       style={{
         backgroundImage: `url(${fullscreenImg})`,
         backgroundSize: "cover",
@@ -86,8 +86,8 @@ export default function App() {
         style={{ backgroundColor: "rgba(0,0,0,0.50)" }}
       />
 
-      <div className="relative z-10 flex flex-col flex-1 justify-end px-3 pb-[max(18px,env(safe-area-inset-bottom))] sm:px-5 sm:pb-8 text-center">
-        <div className="mb-5 sm:mb-8">
+      <div className="relative z-10 flex flex-col flex-1 justify-end px-3 pb-[max(10px,env(safe-area-inset-bottom))] sm:px-5 sm:pb-8 text-center">
+        <div className="mb-3 sm:mb-8">
           <h1
             className="text-4xl sm:text-5xl font-bold"
             style={{
