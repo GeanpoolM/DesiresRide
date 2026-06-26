@@ -8,10 +8,8 @@ const ONLYFANS_URL = "https://onlyfans.com/desiresride";
 
 const PINK = "#FAC0C0";
 const CREAM = "#FFFEF7";
-
 const TELEGRAM_COLOR = "#29A8E0";
-const INSTAGRAM_GRADIENT =
-  "linear-gradient(45deg, #833AB4, #F77737, #FD1D1D)";
+const INSTAGRAM_GRADIENT = "linear-gradient(45deg, #833AB4, #F77737, #FD1D1D)";
 const ONLYFANS_COLOR = "#00AFF0";
 
 interface CtaButtonProps {
@@ -34,14 +32,8 @@ function CtaButton({
   arrowColor,
 }: CtaButtonProps) {
   return (
-    <div className={`animate-fade-in-up ${delay} flex flex-col items-center`}>
-      
-      {/* ARROW */}
-      <svg
-        className="w-5 h-5 mb-1 animate-bounce"
-        viewBox="0 0 20 20"
-        fill="none"
-      >
+    <div className={`animate-fade-in-up ${delay} flex flex-col items-center shrink-0`}>
+      <svg className="w-4 h-4 sm:w-5 sm:h-5 mb-1 animate-bounce" viewBox="0 0 20 20" fill="none">
         <path
           d="M5 7l5 5 5-5"
           stroke={arrowColor}
@@ -51,26 +43,24 @@ function CtaButton({
         />
       </svg>
 
-      {/* BUTTON */}
       <a
         href={href}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={ariaLabel}
         className="
-          flex items-center justify-center gap-2
+          flex items-center justify-center gap-1.5
           rounded-full font-semibold text-white
-          text-xs tracking-wide select-none
+          text-[11px] sm:text-xs tracking-wide select-none
           transition-all duration-300
-          hover:scale-105
-          active:scale-95
+          hover:scale-105 active:scale-95
           focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60
         "
         style={{
           background,
           boxShadow: "0 4px 18px rgba(0,0,0,0.22)",
-          width: "140px",
-          height: "38px",
+          width: "clamp(92px, 28vw, 140px)",
+          height: "clamp(34px, 9vw, 38px)",
         }}
       >
         {icon}
@@ -91,17 +81,13 @@ export default function App() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      {/* overlay */}
       <div
         className="absolute inset-0"
         style={{ backgroundColor: "rgba(0,0,0,0.50)" }}
       />
 
-      {/* content */}
-      <div className="relative z-10 flex flex-col flex-1 justify-end px-5 pb-8 text-center">
-
-        {/* TITLE */}
-        <div className="mb-6 sm:mb-8">
+      <div className="relative z-10 flex flex-col flex-1 justify-end px-3 pb-[max(18px,env(safe-area-inset-bottom))] sm:px-5 sm:pb-8 text-center">
+        <div className="mb-5 sm:mb-8">
           <h1
             className="text-4xl sm:text-5xl font-bold"
             style={{
@@ -124,9 +110,7 @@ export default function App() {
           </p>
         </div>
 
-        {/* CTA BUTTONS */}
-        <div className="flex flex-row justify-center w-full gap-2 sm:gap-6">
-
+        <div className="flex flex-row justify-center items-center w-full gap-1.5 sm:gap-6 max-w-full">
           <CtaButton
             href={TELEGRAM_URL}
             ariaLabel="Telegram"
@@ -155,9 +139,7 @@ export default function App() {
             delay="delay-500"
             label="O.F."
           />
-
         </div>
-
       </div>
     </main>
   );
