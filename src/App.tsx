@@ -21,6 +21,7 @@ interface CtaButtonProps {
   delay: string;
   ariaLabel: string;
   arrowColor: string;
+  badge?: string;
 }
 
 function CtaButton({
@@ -31,12 +32,44 @@ function CtaButton({
   delay,
   ariaLabel,
   arrowColor,
+  badge,
 }: CtaButtonProps) {
   return (
-    <div className={`animate-fade-in-up ${delay} flex flex-col items-center shrink-0`}>
+    <div className={`animate-fade-in-up ${delay} relative flex flex-col items-center shrink-0`}>
       <svg className="w-4 h-4 sm:w-5 sm:h-5 mb-1 animate-bounce" viewBox="0 0 20 20" fill="none">
-        <path d="M5 7l5 5 5-5" stroke={arrowColor} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+        <path
+          d="M5 7l5 5 5-5"
+          stroke={arrowColor}
+          strokeWidth="2.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </svg>
+
+      {badge && (
+        <span
+          className="
+            absolute
+            top-5
+            right-0
+            px-3
+            py-[3px]
+            rounded-full
+            text-[8px] sm:text-[9px]
+            font-bold
+            uppercase
+            tracking-widest
+            text-white
+            shadow-lg
+            z-20
+          "
+          style={{
+            background: "linear-gradient(90deg,#FF7A3D,#FF5A2E)",
+          }}
+        >
+          {badge}
+        </span>
+      )}
 
       <a
         href={href}
@@ -46,7 +79,7 @@ function CtaButton({
         className="
           flex items-center justify-center gap-1.5
           rounded-full font-semibold text-white
-          text-[11px] sm:text-xs tracking-wide select-none
+          text-[10px] sm:text-xs tracking-wide select-none
           transition-all duration-300
           hover:scale-105 active:scale-95
           focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60
@@ -54,8 +87,8 @@ function CtaButton({
         style={{
           background,
           boxShadow: "0 4px 18px rgba(0,0,0,0.22)",
-          width: "clamp(104px, 30vw, 155px)",
-          height: "clamp(34px, 8.5vw, 38px)",
+          width: "clamp(108px, 31vw, 155px)",
+          height: "clamp(35px, 8.5vw, 38px)",
         }}
       >
         {icon}
@@ -111,6 +144,7 @@ export default function App() {
             delay="delay-300"
             icon={<SiOnlyfans size={17} />}
             label="Unlock More 🍑"
+            badge="Exclusive"
           />
 
           <CtaButton
